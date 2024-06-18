@@ -1,0 +1,16 @@
+{
+    "recommendations": [
+        "Dart-Code.flutter",
+        "Dart-Code.dart-code",
+        "qlevar.pub-manager",
+        "hirantha.json-to-dart",
+        "robert-brunhage.flutter-riverpod-snippets",
+        "Postman.postman-for-vscode",
+        "redhat.vscode-yaml",
+        "usernamehw.errorlens",
+        "DavidAnson.vscode-markdownlint",
+        "yzhang.markdown-all-in-one",
+        "eamodio.gitlens",
+        "PKief.material-icon-theme"
+    ]
+}
