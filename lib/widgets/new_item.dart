@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:shopping_list_app/data/categories.dart';
 
 class NewItem extends StatefulWidget {
@@ -65,7 +64,23 @@ class _NewItemState extends State<NewItem> {
                     ),
                   ),
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 12,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text('Reset'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('Add Item'),
+                  )
+                ],
+              ),
             ],
           ),
         ),
