@@ -18,12 +18,12 @@ class _NewItemState extends State<NewItem> {
   int _enteredQuantity = 1;
   Category? _selectedCategory = categories[Categories.vegetables];
 
-  void _saveItem() {
+  void _saveItem(BuildContext context) async {
     if (_formKey.currentState?.validate() ?? false) {
       _formKey.currentState?.save();
       final Uri url = Uri.https('mobile-test-85bed-default-rtdb.firebaseio.com',
           'shopping-list.json');
-      http.post(
+      final response = await http.post(
         url,
         headers: {
           'Content-Type': 'application/json',
@@ -34,6 +34,14 @@ class _NewItemState extends State<NewItem> {
           'category': _selectedCategory!.title,
         }),
       );
+
+      print(response.body);
+      print(response.statusCode);
+
+      if (!context.mounted) {
+        return;
+      }
+      Navigator.of(context).pop();
     }
   }
 
@@ -134,7 +142,9 @@ class _NewItemState extends State<NewItem> {
                     child: const Text('Reset'),
                   ),
                   ElevatedButton(
-                    onPressed: _saveItem,
+                    onPressed: () {
+                      _saveItem(context);
+                    },
                     child: const Text('Add Item'),
                   )
                 ],
