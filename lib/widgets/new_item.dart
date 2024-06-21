@@ -21,8 +21,10 @@ class _NewItemState extends State<NewItem> {
   void _saveItem(BuildContext context) async {
     if (_formKey.currentState?.validate() ?? false) {
       _formKey.currentState?.save();
-      final Uri url = Uri.https('mobile-test-85bed-default-rtdb.firebaseio.com',
-          'shopping-list.json');
+      final Uri url = Uri.https(
+        'mobile-test-85bed-default-rtdb.firebaseio.com',
+        'shopping-list.json',
+      );
       final response = await http.post(
         url,
         headers: {
